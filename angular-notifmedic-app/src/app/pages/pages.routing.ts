@@ -1,8 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { perroComponent } from './perro/perro.component';
 import { PagesComponent } from './pages.component';
-import { ElefanteComponent } from './elefante/elefante.component';
+import { DatopacienteComponent } from './datopaciente/datopaciente.component';
+import { DatomedicamentoComponent } from './datomedicamento/datomedicamento.component';
+import { DatomedicamentootrosComponent } from './datomedicamentootros/datomedicamentootros.component';
+import { DatoreaccionComponent } from './datoreaccion/datoreaccion.component';
+import { DatonotifComponent } from './datonotif/datonotif.component';
 
 const routes: Routes = [
     { 
@@ -10,13 +13,19 @@ const routes: Routes = [
         component: PagesComponent,
         // canActivate: [ AuthGuard ],
         children: [
-            { path: '', component: perroComponent, data: { titulo: 'Dashboard' } },
+            { path: '', component: DatopacienteComponent, data: { titulo: 'Dashboard' } },
             // Mantenimientos
-            { path: 'perros', component: perroComponent, data: { titulo: 'Matenimiento de perros' }},
-            { path: 'elefante', component: ElefanteComponent, data: { titulo: 'Matenimiento de elefantes' }},
+            { path: 'Datopaciente', component: DatopacienteComponent, data: { titulo: 'Datos del Paciente' }},
+            { path: 'Datomedicamento', component: DatomedicamentoComponent, data: { titulo: 'Datos de Medicamento' }},
+            { path: 'Datomedicamentootros', component: DatomedicamentootrosComponent, data: { titulo: 'Datos de Otros Medicamentos' }},
+            { path: 'Datoreaccion', component: DatoreaccionComponent, data: { titulo: 'Datos de la reacción' }},
+            { path: 'Datonotif', component: DatonotifComponent, data: { titulo: 'Datos Notificador' }},
         ]
     },
 ];
+
+
+
 
 @NgModule({
     imports: [ RouterModule.forChild(routes) ],
